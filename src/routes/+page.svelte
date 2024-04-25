@@ -14,26 +14,26 @@
 	let all_mixed = ['หมู', 'จระเข้', 'ไก่', 'ทะเล', 'เป็ด', 'แป้ง', 'ของหวาน'];
     let all_countries = ['ไทย', 'จีน','ญี่ปุ่น','อิตาลี่']
 	let mixed_filter = [];
-    let countries_filter = '';
+    let countries_filter = [];
     let result = foods
 	let desserts_ = foods
     const cal = () => {
         const mixed_filtered = foods.filter((item) =>
             item.mixed.some((mixed) => mixed_filter.includes(mixed))
         );
-        const countries_filtered = mixed_filtered.filter(e => e == countries_filter)
-        console.log(countries_filtered);
+        // const countries_filtered = mixed_filtered.filter(e => e.category.some((mixed) => mixed_filter.includes(mixed)))
+        // console.log(countries_filtered);
         result = mixed_filtered;
     }
 
-	const calDessert = () => {
-		const mixed_filtered = desserts_.filter((item) =>
-            item.mixed.some((mixed) => mixed_filter.includes(mixed))
-        );
-        // const countries_filtered = mixed_filtered.filter(e => e == countries_filter)
-        console.log(countries_filtered);
-        desserts_ = mixed_filtered;
-	}
+	// const calDessert = () => {
+	// 	const mixed_filtered = desserts_.filter((item) =>
+    //         item.mixed.some((mixed) => mixed_filter.includes(mixed))
+    //     );
+    //     // const countries_filtered = mixed_filtered.filter(e => e == countries_filter)
+    //     console.log(countries_filtered);
+    //     desserts_ = mixed_filtered;
+	// }
 
 	const closeDoorModal = () => {
 		isOpen = !isOpen
@@ -126,7 +126,7 @@
 							mixed_filter.splice(index, 1);
 							mixed_filter = mixed_filter;
 						}
-						calDessert()
+						// calDessert()
                         cal()
 					}}
 				/>
